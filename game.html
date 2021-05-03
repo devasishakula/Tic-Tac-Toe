@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<link rel="stylesheet" type="text/css" href="D:\html\assignment of full form\fontawesome\fonts\css\all.css">
+</head>
+<body>
+	<h1 class="animate__animated animate__rubberBand">TIC-TAC-TOE</h1>
+	<div id="box" class="animate__animated animate__bounceInDown">
+		<h2 id="playerbox">---PLAYER 1---</h2>
+		<form id="rst">
+		<table cellpadding="10" cellspacing="20">
+			<tr>
+				<td>
+					<input type="button" value="" id="b1" class="btns">
+				</td>
+				<td>
+					<input type="button" value="" id="b2" class="btns">
+				</td>
+				<td>
+					<input type="button" value="" id="b3" class="btns">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" value="" id="b4" class="btns">
+				</td>
+				<td>
+					<input type="button" value="" id="b5" class="btns">
+				</td>
+				<td>
+					<input type="button" value="" id="b6" class="btns">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" value="" id="b7" class="btns">
+				</td>
+				<td>
+					<input type="button" value="" id="b8" class="btns">
+				</td>
+				<td>
+					<input type="button" value="" id="b9" class="btns">
+				</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+	<script>
+		let plname=document.querySelector('#playerbox');
+		let but1=document.querySelector('#b1');
+		let but2=document.querySelector('#b2');
+		let but3=document.querySelector('#b3');
+		let but4=document.querySelector('#b4');
+		let but5=document.querySelector('#b5');
+		let but6=document.querySelector('#b6');
+		let but7=document.querySelector('#b7');
+		let but8=document.querySelector('#b8');
+		let but9=document.querySelector('#b9');
+		function win()
+		{
+			if((but1.value==='X' && but2.value==='X' && but3.value==='X') ||
+			   (but1.value==='X' && but4.value==='X' && but7.value==='X') ||
+			   (but1.value==='X' && but5.value==='X' && but9.value==='X') ||
+			   (but2.value==='X' && but5.value==='X' && but8.value==='X') ||
+			   (but3.value==='X' && but5.value==='X' && but7.value==='X') ||
+			   (but3.value==='X' && but6.value==='X' && but9.value==='X') ||
+			   (but4.value==='X' && but5.value==='X' && but6.value==='X') ||
+			   (but7.value==='X' && but8.value==='X' && but9.value==='X'))
+			{
+				plname.innerText='PLAYER 1 WINS';
+			}
+			else if((but1.value==='O' && but2.value==='O' && but3.value==='O') ||
+			   		(but1.value==='O' && but4.value==='O' && but7.value==='O') ||
+			   		(but1.value==='O' && but5.value==='O' && but9.value==='O') ||
+			   		(but2.value==='O' && but5.value==='O' && but8.value==='O') ||
+			   		(but3.value==='O' && but5.value==='O' && but7.value==='O') ||
+			   		(but3.value==='O' && but6.value==='O' && but9.value==='O') ||
+			   		(but4.value==='O' && but5.value==='O' && but6.value==='O') ||
+			   		(but7.value==='O' && but8.value==='O' && but9.value==='O'))
+			{
+				plname.innerText='PLAYER 2 WINS';
+			}
+			else if((but1.value==='X'||but1.value==='O')&&(but2.value==='X'||but2.value==='O')&&
+					(but3.value==='X'||but3.value==='O')&&(but4.value==='X'||but4.value==='O')&&
+					(but5.value==='X'||but5.value==='O')&&(but6.value==='X'||but6.value==='O')&&
+					(but7.value==='X'||but7.value==='O')&&(but8.value==='X'||but8.value==='O')&&
+					(but9.value==='X'||but9.value==='O'))
+			{
+				plname.innerText='---GAME DRAW---';
+			}
+		}
+		but1.addEventListener('click',function()
+		{
+			let plno=plname.innerText;
+			if(plno==='---PLAYER 1---')
+			{
+				if(but1.value==='')
+				{
+					but1.value='X';
+					plname.innerText='---PLAYER 2---';
+					win();
+				}
+				else
+				{
+					alert('Place 1 Occupied');
+				}
+			}
+			else if(plno==='---PLAYER 2---')
+			{
+				if(but1.value==='')
+				{
+					but1.value='O';
+					plname.innerText='---PLAYER 1---';
+					win();
+				}
+				else
+				{
+					alert('Place 1 Occupied');
+				}
+			}
+		});
+		but2.addEventListener('click',function()
+		{
+			let plno=plname.innerText;
+			if(plno==='---PLAYER 1---')
+			{
+				if(but2.value==='')
+				{
+					but2.value='X';
+					plname.innerText='---PLAYER 2---';
+					win();
+				}
+				else
+				{
+					alert('Place 2 Occupied');
+				}
+				
+			}
+			else if(plno==='---PLAYER 2---')
+			{
+				if(but2.value==='')
+				{
+					but2.value='O';
+					plname.innerText='---PLAYER 1---';
+					win();
+				}
+				else
+				{
+					alert('Place 2 Occupied');
+				}
+			}
+		});
+		but3.addEventListener('click',function()
+		{
+			let plno=plname.innerText;
+			if(plno==='---PLAYER 1---')
+			{
+				if(but3.value==='')
+				{
+					but3.value='X';
+					plname.innerText='---PLAYER 2---';
+					win();
+				}
+				else
+				{
+					alert('Place 3 Occupied');
+				}
+				
+			}
+			else if(plno==='---PLAYER 2---')
+			{
+				if(but3.value==='')
+				{
+					but3.value='O';
+					plname.innerText='---PLAYER 1---';
+					win();
+				}
+				else
+				{
+					alert('Place 3 Occupied');
+				}
+			}
+		});
+		but4.addEventListener('click',function()
+		{
+			let plno=plname.innerText;
+			if(plno==='---PLAYER 1---')
+			{
+				if(but4.value==='')
+				{
+					but4.value='X';
+					plname.innerText='---PLAYER 2---';
+					win();
+				}
+				else
+				{
+					alert('Place 4 Occupied');
+				}
+				
+			}
+			else if(plno==='---PLAYER 2---')
+			{
+				if(but4.value==='')
+				{
+					but4.value='O';
+					plname.innerText='---PLAYER 1---';
+					win();
+				}
+				else
+				{
+					alert('Place 4 Occupied');
+				}
+			}
+		});
+		but5.addEventListener('click',function()
+		{
+			let plno=plname.innerText;
+			if(plno==='---PLAYER 1---')
+			{
+				if(but5.value==='')
+				{
+					but5.value='X';
+					plname.innerText='---PLAYER 2---';
+					win();
+				}
+				else
+				{
+					alert('Place 5 Occupied');
+				}
+				
+			}
+			else if(plno==='---PLAYER 2---')
+			{
+				if(but5.value==='')
+				{
+					but5.value='O';
+					plname.innerText='---PLAYER 1---';
+					win();
+				}
+				else
+				{
+					alert('Place 5 Occupied');
+				}
+			}
+		});
+		but6.addEventListener('click',function()
+		{
+			let plno=plname.innerText;
+			if(plno==='---PLAYER 1---')
+			{
+				if(but6.value==='')
+				{
+					but6.value='X';
+					plname.innerText='---PLAYER 2---';
+					win();
+				}
+				else
+				{
+					alert('Place 6 Occupied');
+				}
+				
+			}
+			else if(plno==='---PLAYER 2---')
+			{
+				if(but6.value==='')
+				{
+					but6.value='O';
+					plname.innerText='---PLAYER 1---';
+					win();
+				}
+				else
+				{
+					alert('Place 6 Occupied');
+				}
+			}
+		});
+		but7.addEventListener('click',function()
+		{
+			let plno=plname.innerText;
+			if(plno==='---PLAYER 1---')
+			{
+				if(but7.value==='')
+				{
+					but7.value='X';
+					plname.innerText='---PLAYER 2---';
+					win();
+				}
+				else
+				{
+					alert('Place 7 Occupied');
+				}
+				
+			}
+			else if(plno==='---PLAYER 2---')
+			{
+				if(but7.value==='')
+				{
+					but7.value='O';
+					plname.innerText='---PLAYER 1---';
+					win();
+				}
+				else
+				{
+					alert('Place 7 Occupied');
+				}
+			}
+		});
+		but8.addEventListener('click',function()
+		{
+			let plno=plname.innerText;
+			if(plno==='---PLAYER 1---')
+			{
+				if(but8.value==='')
+				{
+					but8.value='X';
+					plname.innerText='---PLAYER 2---';
+					win();
+				}
+				else
+				{
+					alert('Place 8 Occupied');
+				}
+				
+			}
+			else if(plno==='---PLAYER 2---')
+			{
+				if(but8.value==='')
+				{
+					but8.value='O';
+					plname.innerText='---PLAYER 1---';
+					win();
+				}
+				else
+				{
+					alert('Place 8 Occupied');
+				}
+			}
+		});
+		but9.addEventListener('click',function()
+		{
+			let plno=plname.innerText;
+			if(plno==='---PLAYER 1---')
+			{
+				if(but9.value==='')
+				{
+					but9.value='X';
+					plname.innerText='---PLAYER 2---';
+					win();
+				}
+				else
+				{
+					alert('Place 9 Occupied');
+				}
+				
+			}
+			else if(plno==='---PLAYER 2---')
+			{
+				if(but9.value==='')
+				{
+					but9.value='O';
+					plname.innerText='---PLAYER 1---';
+					win();
+				}
+				else
+				{
+					alert('Place 9 Occupied');
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>
