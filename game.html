@@ -9,7 +9,7 @@
 <body>
 	<h1 class="animate__animated animate__rubberBand">TIC-TAC-TOE</h1>
 	<div id="box" class="animate__animated animate__bounceInDown">
-		<h2 id="playerbox">---PLAYER 1---</h2>
+		<h2 id="playerbox">---PLAYER X---</h2>
 		<form id="rst">
 		<table cellpadding="10" cellspacing="20">
 			<tr>
@@ -70,7 +70,7 @@
 			   (but4.value==='X' && but5.value==='X' && but6.value==='X') ||
 			   (but7.value==='X' && but8.value==='X' && but9.value==='X'))
 			{
-				plname.innerText='PLAYER 1 WINS';
+				plname.innerText='PLAYER-X WINS';
 			}
 			else if((but1.value==='O' && but2.value==='O' && but3.value==='O') ||
 			   		(but1.value==='O' && but4.value==='O' && but7.value==='O') ||
@@ -81,7 +81,7 @@
 			   		(but4.value==='O' && but5.value==='O' && but6.value==='O') ||
 			   		(but7.value==='O' && but8.value==='O' && but9.value==='O'))
 			{
-				plname.innerText='PLAYER 2 WINS';
+				plname.innerText='PLAYER-O WINS';
 			}
 			else if((but1.value==='X'||but1.value==='O')&&(but2.value==='X'||but2.value==='O')&&
 					(but3.value==='X'||but3.value==='O')&&(but4.value==='X'||but4.value==='O')&&
@@ -95,12 +95,12 @@
 		but1.addEventListener('click',function()
 		{
 			let plno=plname.innerText;
-			if(plno==='---PLAYER 1---')
+			if(plno==='---PLAYER X---')
 			{
 				if(but1.value==='')
 				{
 					but1.value='X';
-					plname.innerText='---PLAYER 2---';
+					plname.innerText='---PLAYER O---';
 					win();
 				}
 				else
@@ -108,12 +108,12 @@
 					alert('Place 1 Occupied');
 				}
 			}
-			else if(plno==='---PLAYER 2---')
+			else if(plno==='---PLAYER O---')
 			{
 				if(but1.value==='')
 				{
 					but1.value='O';
-					plname.innerText='---PLAYER 1---';
+					plname.innerText='---PLAYER X---';
 					win();
 				}
 				else
@@ -125,12 +125,12 @@
 		but2.addEventListener('click',function()
 		{
 			let plno=plname.innerText;
-			if(plno==='---PLAYER 1---')
+			if(plno==='---PLAYER X---')
 			{
 				if(but2.value==='')
 				{
 					but2.value='X';
-					plname.innerText='---PLAYER 2---';
+					plname.innerText='---PLAYER O---';
 					win();
 				}
 				else
@@ -139,12 +139,12 @@
 				}
 				
 			}
-			else if(plno==='---PLAYER 2---')
+			else if(plno==='---PLAYER O---')
 			{
 				if(but2.value==='')
 				{
 					but2.value='O';
-					plname.innerText='---PLAYER 1---';
+					plname.innerText='---PLAYER X---';
 					win();
 				}
 				else
@@ -156,12 +156,12 @@
 		but3.addEventListener('click',function()
 		{
 			let plno=plname.innerText;
-			if(plno==='---PLAYER 1---')
+			if(plno==='---PLAYER X---')
 			{
 				if(but3.value==='')
 				{
 					but3.value='X';
-					plname.innerText='---PLAYER 2---';
+					plname.innerText='---PLAYER O---';
 					win();
 				}
 				else
@@ -170,12 +170,12 @@
 				}
 				
 			}
-			else if(plno==='---PLAYER 2---')
+			else if(plno==='---PLAYER O---')
 			{
 				if(but3.value==='')
 				{
 					but3.value='O';
-					plname.innerText='---PLAYER 1---';
+					plname.innerText='---PLAYER X---';
 					win();
 				}
 				else
@@ -187,12 +187,12 @@
 		but4.addEventListener('click',function()
 		{
 			let plno=plname.innerText;
-			if(plno==='---PLAYER 1---')
+			if(plno==='---PLAYER X---')
 			{
 				if(but4.value==='')
 				{
 					but4.value='X';
-					plname.innerText='---PLAYER 2---';
+					plname.innerText='---PLAYER O---';
 					win();
 				}
 				else
@@ -201,12 +201,12 @@
 				}
 				
 			}
-			else if(plno==='---PLAYER 2---')
+			else if(plno==='---PLAYER O---')
 			{
 				if(but4.value==='')
 				{
 					but4.value='O';
-					plname.innerText='---PLAYER 1---';
+					plname.innerText='---PLAYER X---';
 					win();
 				}
 				else
@@ -218,12 +218,12 @@
 		but5.addEventListener('click',function()
 		{
 			let plno=plname.innerText;
-			if(plno==='---PLAYER 1---')
+			if(plno==='---PLAYER X---')
 			{
 				if(but5.value==='')
 				{
 					but5.value='X';
-					plname.innerText='---PLAYER 2---';
+					plname.innerText='---PLAYER O---';
 					win();
 				}
 				else
@@ -232,12 +232,12 @@
 				}
 				
 			}
-			else if(plno==='---PLAYER 2---')
+			else if(plno==='---PLAYER O---')
 			{
 				if(but5.value==='')
 				{
 					but5.value='O';
-					plname.innerText='---PLAYER 1---';
+					plname.innerText='---PLAYER X---';
 					win();
 				}
 				else
@@ -249,12 +249,12 @@
 		but6.addEventListener('click',function()
 		{
 			let plno=plname.innerText;
-			if(plno==='---PLAYER 1---')
+			if(plno==='---PLAYER X---')
 			{
 				if(but6.value==='')
 				{
 					but6.value='X';
-					plname.innerText='---PLAYER 2---';
+					plname.innerText='---PLAYER O---';
 					win();
 				}
 				else
@@ -263,12 +263,12 @@
 				}
 				
 			}
-			else if(plno==='---PLAYER 2---')
+			else if(plno==='---PLAYER O---')
 			{
 				if(but6.value==='')
 				{
 					but6.value='O';
-					plname.innerText='---PLAYER 1---';
+					plname.innerText='---PLAYER X---';
 					win();
 				}
 				else
@@ -280,12 +280,12 @@
 		but7.addEventListener('click',function()
 		{
 			let plno=plname.innerText;
-			if(plno==='---PLAYER 1---')
+			if(plno==='---PLAYER X---')
 			{
 				if(but7.value==='')
 				{
 					but7.value='X';
-					plname.innerText='---PLAYER 2---';
+					plname.innerText='---PLAYER O---';
 					win();
 				}
 				else
@@ -294,12 +294,12 @@
 				}
 				
 			}
-			else if(plno==='---PLAYER 2---')
+			else if(plno==='---PLAYER O---')
 			{
 				if(but7.value==='')
 				{
 					but7.value='O';
-					plname.innerText='---PLAYER 1---';
+					plname.innerText='---PLAYER X---';
 					win();
 				}
 				else
@@ -311,12 +311,12 @@
 		but8.addEventListener('click',function()
 		{
 			let plno=plname.innerText;
-			if(plno==='---PLAYER 1---')
+			if(plno==='---PLAYER X---')
 			{
 				if(but8.value==='')
 				{
 					but8.value='X';
-					plname.innerText='---PLAYER 2---';
+					plname.innerText='---PLAYER O---';
 					win();
 				}
 				else
@@ -325,12 +325,12 @@
 				}
 				
 			}
-			else if(plno==='---PLAYER 2---')
+			else if(plno==='---PLAYER O---')
 			{
 				if(but8.value==='')
 				{
 					but8.value='O';
-					plname.innerText='---PLAYER 1---';
+					plname.innerText='---PLAYER X---';
 					win();
 				}
 				else
@@ -342,12 +342,12 @@
 		but9.addEventListener('click',function()
 		{
 			let plno=plname.innerText;
-			if(plno==='---PLAYER 1---')
+			if(plno==='---PLAYER X---')
 			{
 				if(but9.value==='')
 				{
 					but9.value='X';
-					plname.innerText='---PLAYER 2---';
+					plname.innerText='---PLAYER O---';
 					win();
 				}
 				else
@@ -356,12 +356,12 @@
 				}
 				
 			}
-			else if(plno==='---PLAYER 2---')
+			else if(plno==='---PLAYER O---')
 			{
 				if(but9.value==='')
 				{
 					but9.value='O';
-					plname.innerText='---PLAYER 1---';
+					plname.innerText='---PLAYER X---';
 					win();
 				}
 				else
