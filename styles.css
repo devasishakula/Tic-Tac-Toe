@@ -113,12 +113,3 @@ h1:hover
 	background-color: red;
 	color: cyan;
 }
-#li
-{
-	margin-right: 10px;
-	color:blue;
-}
-#li:hover
-{
-	color:red;
-}
