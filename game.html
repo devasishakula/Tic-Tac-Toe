@@ -61,6 +61,23 @@
 		let but8=document.querySelector('#b8');
 		let but9=document.querySelector('#b9');
 		let reset=document.querySelector('#clear');
+		function gameover()
+		{
+			plname.innerText='---PLAYER X---';
+			but1.value='';
+			but2.value='';
+			but3.value='';
+			but4.value='';
+			but5.value='';
+			but6.value='';
+			but7.value='';
+			but8.value='';
+			but9.value='';
+		}
+		reset.addEventListener('click',function()
+		{
+			gameover();
+		});
 		function win()
 		{
 			if((but1.value==='X' && but2.value==='X' && but3.value==='X') ||
@@ -73,6 +90,7 @@
 			   (but7.value==='X' && but8.value==='X' && but9.value==='X'))
 			{
 				plname.innerText='PLAYER-X WINS';
+				setTimeout(gameover,10000);
 			}
 			else if((but1.value==='O' && but2.value==='O' && but3.value==='O') ||
 			   		(but1.value==='O' && but4.value==='O' && but7.value==='O') ||
@@ -84,6 +102,7 @@
 			   		(but7.value==='O' && but8.value==='O' && but9.value==='O'))
 			{
 				plname.innerText='PLAYER-O WINS';
+				setTimeout(gameover,10000);
 			}
 			else if((but1.value==='X'||but1.value==='O')&&(but2.value==='X'||but2.value==='O')&&
 					(but3.value==='X'||but3.value==='O')&&(but4.value==='X'||but4.value==='O')&&
@@ -92,6 +111,7 @@
 					(but9.value==='X'||but9.value==='O'))
 			{
 				plname.innerText='---GAME DRAW---';
+				setTimeout(gameover,10000);
 			}
 		}
 		but1.addEventListener('click',function()
@@ -371,19 +391,6 @@
 					alert('Place 9 Occupied');
 				}
 			}
-		});
-		reset.addEventListener('click',function()
-		{
-			plname.innerText='---PLAYER X---';
-			but1.value='';
-			but2.value='';
-			but3.value='';
-			but4.value='';
-			but5.value='';
-			but6.value='';
-			but7.value='';
-			but8.value='';
-			but9.value='';
 		});
 	</script>
 </body>
