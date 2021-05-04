@@ -60,6 +60,20 @@ h1
 	box-shadow: 0 0 15px red;
 	font-family: Arial;
 }
+#clear
+{
+	margin-top: 10px;
+	width: 130px;
+	outline: none;
+	border: 1px solid red;
+	border-radius: 20px;
+	box-shadow: 0 0 20px blue;
+	background-color: lime;
+	color:red;
+	height:30px;
+	font-weight: bold;
+	font-size: 20px;
+}
 #playerbox
 {
 	margin: 0px;

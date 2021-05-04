@@ -47,6 +47,7 @@
 			</tr>
 		</table>
 		</form>
+		<button id="clear">Restart</button>
 	</div>
 	<script>
 		let plname=document.querySelector('#playerbox');
@@ -59,6 +60,7 @@
 		let but7=document.querySelector('#b7');
 		let but8=document.querySelector('#b8');
 		let but9=document.querySelector('#b9');
+		let reset=document.querySelector('#clear');
 		function win()
 		{
 			if((but1.value==='X' && but2.value==='X' && but3.value==='X') ||
@@ -370,7 +372,19 @@
 				}
 			}
 		});
-
+		reset.addEventListener('click',function()
+		{
+			plname.innerText='---PLAYER X---';
+			but1.value='';
+			but2.value='';
+			but3.value='';
+			but4.value='';
+			but5.value='';
+			but6.value='';
+			but7.value='';
+			but8.value='';
+			but9.value='';
+		});
 	</script>
 </body>
 </html>
