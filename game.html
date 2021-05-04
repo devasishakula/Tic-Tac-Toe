@@ -10,6 +10,7 @@
 	<h1 class="animate__animated animate__rubberBand">TIC-TAC-TOE</h1>
 	<div id="box" class="animate__animated animate__bounceInDown">
 		<h2 id="playerbox">---PLAYER X---</h2>
+		<h2 id="restarting"></h2>
 		<form id="rst">
 		<table cellpadding="10" cellspacing="20">
 			<tr>
@@ -61,6 +62,7 @@
 		let but8=document.querySelector('#b8');
 		let but9=document.querySelector('#b9');
 		let reset=document.querySelector('#clear');
+		let restart=document.querySelector('#restarting');
 		function gameover()
 		{
 			plname.innerText='---PLAYER X---';
@@ -73,11 +75,37 @@
 			but7.value='';
 			but8.value='';
 			but9.value='';
+			restart.innerText='';
 		}
 		reset.addEventListener('click',function()
 		{
 			gameover();
 		});
+		let c=10;
+		let countdown=()=>
+		{
+			restart.innerText='Restarting in : '+(c--);
+			if(c==-2)
+			{
+				c=10;
+			}
+		}
+		var clr1;
+		function again()
+		{
+			let count=setInterval(countdown,1000);
+			clr1=setTimeout(function()
+			{
+				clearInterval(count);
+				gameover();	
+			},12000);
+			reset.addEventListener('click',function()
+			{
+				clearTimeout(clr1);
+				clearInterval(count);
+				c=10;
+			});
+		}
 		function win()
 		{
 			if((but1.value==='X' && but2.value==='X' && but3.value==='X') ||
@@ -90,7 +118,7 @@
 			   (but7.value==='X' && but8.value==='X' && but9.value==='X'))
 			{
 				plname.innerText='PLAYER-X WINS';
-				setTimeout(gameover,10000);
+				again();
 			}
 			else if((but1.value==='O' && but2.value==='O' && but3.value==='O') ||
 			   		(but1.value==='O' && but4.value==='O' && but7.value==='O') ||
@@ -102,7 +130,7 @@
 			   		(but7.value==='O' && but8.value==='O' && but9.value==='O'))
 			{
 				plname.innerText='PLAYER-O WINS';
-				setTimeout(gameover,10000);
+				again();
 			}
 			else if((but1.value==='X'||but1.value==='O')&&(but2.value==='X'||but2.value==='O')&&
 					(but3.value==='X'||but3.value==='O')&&(but4.value==='X'||but4.value==='O')&&
@@ -111,7 +139,7 @@
 					(but9.value==='X'||but9.value==='O'))
 			{
 				plname.innerText='---GAME DRAW---';
-				setTimeout(gameover,10000);
+				again();
 			}
 		}
 		but1.addEventListener('click',function()
